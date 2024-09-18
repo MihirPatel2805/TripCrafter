@@ -1,0 +1,14 @@
+.text__s{
+    color: aliceblue;
+}
+.bg__color{
+    background-color: #a5f4ff61;
+}
+.title_style{
+    color:#05668d;
+}
+.booked_card{
+    border-radius: 10px;
+    margin:10px;
+    border:1px solid #05668d;
+}

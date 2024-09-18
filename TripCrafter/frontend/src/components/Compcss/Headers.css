@@ -1,0 +1,21 @@
+.navbar-nav .nav-item a:hover {
+    color: #fff; /* Change the text color */
+    background-color: #055f82; /* Change the background color */
+    transition: color 0.3s, background-color 0.3s; /* Add transition for smooth effect */
+}
+.navbar-nav .nav-item a{
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-family: var(--font-name);
+}
+.navbar{
+    box-shadow: 2px 2px 3px #0000005c;
+    
+}
+.nav_css{
+    /* background-color: #00C58E; */
+    background-color: #05668d;
+}
+.btn{
+    font-family: var(--subtitle-font-name);
+}

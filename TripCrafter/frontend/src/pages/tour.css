@@ -1,0 +1,78 @@
+.pagination span {
+   width          : 4rem;
+   height         : 4rem;
+   padding        : 5px;
+   border-radius  : 50px;
+   display        : flex;
+   align-items    : center;
+   justify-content: center;
+   border         : 1px solid #ccc;
+   color          : var(--heading-color);
+   font-size      : 1rem;
+   cursor         : pointer;
+   font-weight    : 500;
+   font-size: 25px;
+   
+}
+.pagination span:hover{
+   box-shadow: 0px 0px 5px #a2a2a2;
+   border: none;
+}
+.active__page {
+   /* background: var(--secondary-color); */
+   color     : #0080a3 !important;
+   
+   
+}
+.page_box{
+   border-top:1px solid #ccc;
+}
+.your-section {
+   position: relative;
+   height: 400px; /* Adjust as needed for the desired height */
+   overflow: hidden;
+   width: 100%;
+   background-size: cover;
+   background-position: center;
+   /* Set your background image here */
+   background-image: url('../images/landscape1.jpg');
+}
+
+.background-image {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   /* height: 300px; */
+   opacity: 0.6; /* Adjust the opacity as needed */
+}
+
+.dark-filter {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 32, 41, 0.6); /* Adjust the transparency as needed */
+}
+
+.content {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: #fff; /* Text color */
+}
+
+.title {
+   font-size: 2.5rem; /* Adjust font size as needed */
+   margin-bottom: 10px;
+   color: #fff;
+   font-family: var(--font-name);
+}
+
+.subtitle {
+   font-size: 1.5rem;
+   font-family: var(--subtitle-font-name); /* Adjust font size as needed */
+}

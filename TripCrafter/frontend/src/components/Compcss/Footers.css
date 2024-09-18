@@ -1,0 +1,14 @@
+@media screen and (maxwidth:992px) {
+    .border_top{
+        border:1px solid white !important;
+    }
+}
+.container-fluid{
+    font-family: var(--primary-font);
+}
+.text_title{
+    font-family: var(--font-name);
+  }
+  .text_decpt{
+    font-family: var(--subtitle-font-name) !important;
+  }

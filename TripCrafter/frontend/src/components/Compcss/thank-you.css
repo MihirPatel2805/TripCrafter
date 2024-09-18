@@ -1,0 +1,21 @@
+
+
+.text__style {
+   font-family: var(--subtitle-font-name);
+}
+.text__primary{
+   font-family: var(--font-name);
+   font-weight: bold;
+   font-size: 50px;
+}
+.btn__thank{
+   padding: 10px 20px;
+   border:1px solid #05668d;
+   color:#05668d; 
+   font-weight: bold;
+   border-radius: 10px;
+}
+.btn__thank:hover{
+   background-color:#05668d;
+   color:white;
+}

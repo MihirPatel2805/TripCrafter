@@ -1,0 +1,25 @@
+.container_box{
+    border-radius: 10px;
+    background-color: #ffffff;
+    /* background-color: #00daabd9; */
+    box-shadow:0px 0px 8px #48ffcbbd;
+}
+.row_box{
+    height: 150px;
+   
+}
+.input_field input{
+    border:none;
+    border-radius: none;
+    border-bottom: 1px solid #ccc;
+    padding: 3px 5px;
+    width: 100%;
+    height: 40px;
+    background-color: #ffffff;
+}
+.input_field input:focus{
+    outline: none;
+}
+.ip_col{
+    width: 70%;
+}

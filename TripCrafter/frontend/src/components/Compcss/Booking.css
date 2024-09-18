@@ -1,0 +1,40 @@
+/* YourForm.css */
+.form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+  }
+  .container{
+    font-family: var(--primary-font);
+  }
+  .form-control:focus {
+    border-color: #ccc;
+    box-shadow: none;
+  }
+  
+  .form-check-input {
+    margin-right: 8px;
+  }
+.form_container{
+    padding: 30px;
+    width: 40%;
+    border-radius: 15px;
+}  
+.container .form-group label
+ {
+    /* margin-left: 14px; */
+    font-size: 20px;
+    font-weight: 500;
+}
+.form_var input{
+    padding: 10px 0px;
+}
+.form-group{
+    /* border: 1px solid black; */
+    margin: 10px 0px 0px 0px;
+}
+.container .form-group .form-check-label{
+    font-size: 18px;
+    font-weight: 400;
+}

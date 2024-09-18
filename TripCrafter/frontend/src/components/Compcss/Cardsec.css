@@ -1,0 +1,38 @@
+.card_effect:hover{
+  box-shadow: 0px 3px 4px #ccc !important;
+  transition: 0.3s;
+}
+.text_title{
+  font-family: var(--font-name);
+}
+.text_decpt{
+  font-family: var(--subtitle-font-name) !important;
+}
+.btn{
+  font-family: var(--subtitle-font-name) !important;
+}
+.card-img-top {
+  height: 300px !important; /* Adjust the height to your desired size */
+  object-fit: cover !important; /* Maintain aspect ratio and cover the entire space */
+}
+.btn__color{
+  background-color: white;
+  border:1px solid #006a7891;
+  color:#005863;
+}
+.btn__color:hover{
+  background-color: #a5f4ff61;
+  color:#005863;
+}
+@media screen and (max-width:768px) {
+  .break_box{
+    display: inline !important;
+  }
+  
+}
+@media screen and (max-width:575px)
+{
+  .break_box{
+    display: flex !important;
+  }
+} 
