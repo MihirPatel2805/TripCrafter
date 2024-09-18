@@ -65,6 +65,7 @@ def get_tour_detail(request, id):
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     serializer = TourSerializer(tour)
+    print(serializer.data)
     return Response(serializer.data)
 
 
@@ -76,8 +77,11 @@ def get_tour_detail(request, id):
 @api_view(['POST'])
 @permission_classes([IsAuthenticated]) 
 def create_booking(request):
+    print(request.data)
     data = request.data.copy()
+    print(data)
     data['user'] = request.user.id
+    print(data)
     serializer = BookingSerializer(data=data)
     if serializer.is_valid():
         # Create the booking
@@ -87,13 +91,17 @@ def create_booking(request):
         tour_id = data['tour']
         num_of_people = int(data['num_of_people'])
         tour = Tour.objects.get(id=tour_id)
-
-        if tour.max_group_size >= num_of_people:
-            tour.max_group_size -= num_of_people
-            if tour.max_group_size < 0:
-                tour.max_group_size = 0  # Ensure it doesn't go below 0
-            tour.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(tour.seat)
+        for date in tour.seat:
+            if date['Date']==data['booking_date'] :
+                if date['available_seats']>=num_of_people:
+                    date['available_seats'] -= num_of_people
+                    if date['available_seats'] < 0:
+                        date['available_seats'] = 0
+                    tour.save()
+                    break
+        print(tour.seat)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
