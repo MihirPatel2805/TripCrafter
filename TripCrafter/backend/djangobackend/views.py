@@ -113,6 +113,10 @@ class BookingList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         # Filter bookings by the current authenticated user
+        data = Booking.objects.filter(user=self.request.user)
+        print(data)
+        serializers = ShowBookingSerializer(data, many=True)
+        print(serializers.data)
         return Booking.objects.filter(user=self.request.user)
     
     def perform_authentication(self, request):

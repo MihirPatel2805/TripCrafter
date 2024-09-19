@@ -39,6 +39,7 @@ class Booking(models.Model):
         ('Female', 'Female'),
         ('Other', 'Other'),
     ]
+    personDetails =models.JSONField(default=list)
     gender = models.CharField(max_length=10, choices=gender_choices)
     # Add a status field with a default value of 'Not Completed'
 

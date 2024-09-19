@@ -4,7 +4,7 @@ from .models import Tour,Booking
 from django.contrib.auth.models import User
 
 
-############################################            user registration serializer
+############################################  user registration serializer
 class UserRegistrationSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -72,5 +72,5 @@ class ShowBookingSerializer(serializers.ModelSerializer):
             "gender":instance.gender,
             "price":instance.tour.price,
             "status":instance.status,
-
+            "personDetails":instance.personDetails
         }
