@@ -113,18 +113,44 @@ class BookingList(generics.ListCreateAPIView):
         return super().perform_authentication(request)
 
 #-------- delete a specific booking
-class Deletebooking(generics.DestroyAPIView):
-    permission_classes=[permissions.IsAuthenticated]
-    def delete(self, request,id):
-        try:
-            object=Booking.objects.get(id=id)
-            print(object)
-            if object:
-                object.delete()
-                return Response({'message':"delete successful"},status=status.HTTP_204_NO_CONTENT)
-        except Exception as e:
-            return Response({'message':e},status=status.HTTP_404_NOT_FOUND)
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+def delete_booking(request, id):
+    try:
+        booking = Booking.objects.get(id=id)
+        tour = booking.tour
+
+        # Restore the seats
+        tour.max_group_size += booking.num_of_people
+        tour.save()
+
+        # Delete the booking
+        booking.delete()
+        return Response({'message': "Delete successful"}, status=status.HTTP_204_NO_CONTENT)
+    except Booking.DoesNotExist:
+        return Response({'message': "Booking not found"}, status=status.HTTP_404_NOT_FOUND)
+    except Exception as e:
+        return Response({'message': str(e)}, status=status.HTTP_400_BAD_REQUEST)
 
 
 
 
+from rest_framework import generics
+from .models import Train, Station, Route ,Coach
+from .serializers import CoachSerializer, StationSerializer ,TrainSerializer
+class TrainListView(generics.ListCreateAPIView):
+    queryset = Train.objects.all()
+    serializer_class = TrainSerializer
+
+class StationListView(generics.ListAPIView):
+    queryset = Station.objects.all()
+    serializer_class = StationSerializer
+
+class CoachView(generics.ListAPIView):
+    queryset = Coach.objects.all()
+    serializer_class = CoachSerializer
+
+class TrainDetailView(generics.RetrieveAPIView):
+    queryset = Train.objects.all()
+    serializer_class = TrainSerializer
+    lookup_field = 'id'  # This will look for 'id' in the URL

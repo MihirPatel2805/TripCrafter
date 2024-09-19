@@ -10,6 +10,8 @@ import Bookinglayout from '../layout/Bookinglayout';
 import Booking from './Booking';
 import ThankYou from './Thankyou';
 import Mybookings from './Mybookings'
+import TrainListingPage from '../pages/TrainListingPage';
+import Traincheckoutpage from '../pages/Traincheckoutpage'
 const Routers = () => {
   return (
     
@@ -24,6 +26,11 @@ const Routers = () => {
         <Route path='/bookinglayout/:id'   element={<Bookinglayout/>} />
         <Route path='/thankyou' element={<ThankYou/>} />
         <Route path='/mybookings' element={<Mybookings/>} />
+        <Route path='/train' element={<TrainListingPage/>} />
+        <Route
+            path="/traincheckoutpage/:id/:coachName"
+            element={<Traincheckoutpage />}
+          />
     </Routes>
     
     
