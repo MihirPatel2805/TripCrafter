@@ -1,9 +1,9 @@
-/* .text_title{
+.text_title{
     font-family: var(--font-name);
   }
-  .text_decpt{
+  /* .text_decpt{
     font-family: var(--subtitle-font-name);
-  }
+  } */
   .bg_sub{
     background-color: rgba(154, 236, 255, 0.263) !important;
     border-radius: 10px;
@@ -13,7 +13,7 @@
   }
   .btn_color{
     background-color: #05668d;
-  } */
+  }
  
   .text_decpt {
     font-family: 'Arial', sans-serif;

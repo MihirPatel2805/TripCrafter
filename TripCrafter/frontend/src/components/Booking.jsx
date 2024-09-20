@@ -71,7 +71,6 @@ const Booking = () => {
     return;
   }
 
-
     axios.post('http://127.0.0.1:8000/api/api/bookings/',formData,{
       headers:{
         "Authorization":`Token ${token}`, 

@@ -1,4 +1,3 @@
-
 from rest_framework import generics,serializers, status , permissions
 from .models import Tour,Booking 
 from django.contrib.auth.models import User
@@ -38,8 +37,6 @@ class UserLoginView(generics.CreateAPIView):
         else:
             return Response({'message': 'Login failed'}, status=status.HTTP_401_UNAUTHORIZED)
 
-
-
 #------------user info view which returns user data 
 class UserInfoView(generics.RetrieveAPIView):
     serializer_class = UserInfoSerializer
@@ -67,9 +64,7 @@ def get_tour_detail(request, id):
     serializer = TourSerializer(tour)
     return Response(serializer.data)
 
-
 ###########################################################     bookings logic
-
 
 #---------  create booking logic when booking is made
 
