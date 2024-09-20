@@ -5,6 +5,40 @@ import T2 from '../images/tour06.jpg';
 import './pagescss/home.css';
 import Gallary from '../components/Gallary';
 import Card from '../components/Card';
+import ReviewCard from '../components/ReviewCard'
+
+const reviews = [
+  {
+    name: 'John Doe',
+    profileImg: 'https://randomuser.me/api/portraits/men/1.jpg',
+    rating: 5,
+    reviewText: 'Booking through this website was super easy! Got great deals and had an amazing experience.',
+  },
+  {
+    name: 'Jane Smith',
+    profileImg: 'https://randomuser.me/api/portraits/women/1.jpg',
+    rating: 4,
+    reviewText: 'Overall a good experience, though the filtering options could be improved. The service was excellent!',
+  },
+  {
+    name: 'Mike Johnson',
+    profileImg: 'https://randomuser.me/api/portraits/men/2.jpg',
+    rating: 3,
+    reviewText: 'The booking process was fine, but I had issues with my confirmation email. Customer support helped resolve it.',
+  },
+  {
+    name: 'Emily Clark',
+    profileImg: 'https://randomuser.me/api/portraits/women/2.jpg',
+    rating: 5,
+    reviewText: 'Loved the platform! Quick and easy. I will definitely use this site again for my next trip!',
+  },
+  {
+    name: 'David Wilson',
+    profileImg: 'https://randomuser.me/api/portraits/men/3.jpg',
+    rating: 4,
+    reviewText: 'The prices were competitive, and I appreciated the fast booking confirmation. Smooth process overall.',
+  }
+];
 
 const Home = () => {
   return (
@@ -115,6 +149,24 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <div className="container my-5">
+      <h2 className="text-center mb-4">Customer Reviews</h2>
+      <div className="row justify-content-center">
+        <div className="col-lg-8 col-md-10">
+          {reviews.map((review, index) => (
+            <ReviewCard
+              key={index}
+              name={review.name}
+              profileImg={review.profileImg}
+              rating={review.rating}
+              reviewText={review.reviewText}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+    
     </>
   );
 };
