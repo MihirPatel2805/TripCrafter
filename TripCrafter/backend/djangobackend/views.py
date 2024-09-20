@@ -43,7 +43,6 @@ class UserInfoView(generics.RetrieveAPIView):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self):
-
         return self.request.user
 
 ####################################################    Tour logic

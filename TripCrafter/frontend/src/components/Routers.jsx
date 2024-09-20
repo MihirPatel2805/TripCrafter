@@ -9,6 +9,7 @@ import Register from '../pages/Register';
 import Bookinglayout from '../layout/Bookinglayout';
 import Booking from './Booking';
 import ThankYou from './Thankyou';
+import Payment from '../pages/Payment';
 import Mybookings from './Mybookings'
 import TrainListingPage from '../pages/TrainListingPage';
 import Traincheckoutpage from '../pages/Traincheckoutpage'
@@ -22,6 +23,7 @@ const Routers = () => {
         <Route path='/about' element={<About/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/register' element={<Register/>} />
+        <Route path='/payment' element={<Payment/>} />
         <Route path='/Booking/:id' element={<Booking/>} />
         <Route path='/bookinglayout/:id'   element={<Bookinglayout/>} />
         <Route path='/thankyou' element={<ThankYou/>} />

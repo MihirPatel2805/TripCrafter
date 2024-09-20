@@ -79,16 +79,12 @@ const Booking = () => {
     }).then(
       (res)=>{
         console.log(res.data)
-        navigate('/thankyou');
+        navigate('/payment');
       }
-      ).catch(
-        
-        (err)=>
-        {
-          console.log(err)  
-        }
-        )
-        };
+      ).catch( (err) => {
+        console.log(err)  
+      })
+    };
         
         return (
           
