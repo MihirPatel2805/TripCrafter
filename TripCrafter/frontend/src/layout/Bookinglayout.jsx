@@ -8,18 +8,15 @@ const Bookinglayout = () => {
 
     const { id } = useParams(); // Get the `id` parameter from the URL
     const [tourData, setTourData] = useState(null);
-   
+    const [date, setDate] = useState('')
 
    const  userToken=localStorage.getItem('userToken');
   
     useEffect(() => {
       const fetchTourData = async () => {
         try {
-          const response = await axios.get(`http://127.0.0.1:8000/api/api/tours/${id}/`);
-      
-          
+          const response = await axios.get(`http://127.0.0.1:8000/api/api/tours/${id}/`);          
           setTourData(response.data);
-          
         } catch (error) {
           console.error('Error fetching tour data:', error);
         }
@@ -27,26 +24,26 @@ const Bookinglayout = () => {
   
       fetchTourData();
     }, [id]);
-  
-
-    
-   
+     
     if (!tourData) {
       return <div>Loading...</div>;
     }
-
-
+    
     const handleBookNowClick = () => {
-      if (tourData.max_group_size === 0) {
-        // Max group size is 0, display an alert
-        alert('No seats available!! come back soon');
+      if (date === ''){
+        alert('Please Select Date!')
       } else {
-        // Max group size is not 0, navigate to the booking page
-        navigate(`/Booking/${tourData.id}`);
+        tourData.seat.map((seat, index) => {
+          if (seat.Date === date){
+            if (seat.available_seats === 0) {
+              alert('No Seats Available.')
+            } else {
+              navigate(`/Booking/${tourData.id}`);
+            } 
+          }
+        })
       }
     };
-    // console.log(tourData.photo)
-
 
   return (
     <>
@@ -164,46 +161,65 @@ const Bookinglayout = () => {
                   </div>
                 </div>
 
-                <div className="d-flex align-items-start justify-content-between mt-3 text_decpt">
-                  <div className="fs-5 fw-bold text_decpt fs-4">
-                    &#8377;{tourData.price}
-                    <span className="fw-normal text_decpt text-muted">/person</span>
+                <div className="tour-info-section mt-4">
+                  <div className="align-items-start">
+                    {/* Price Info */}
+                    <div className="price-info fs-5 fw-bold text-dark">
+                      &#8377;{tourData.price}
+                      <span className="fw-normal text-muted"> /person</span>
+                    </div>
                   </div>
-                  <div className="fs-5 fw-bold text_decpt fs-4">
-                    Seats available:
-                    {tourData.seat.map((id, index) => (
-                      <div key={index}> {/* Make sure the key is in the outer element */}
-                        <span className="ms-2">
-                          {id.Date}
-                        </span> : 
-                        <span className="ms-2">
-                          {id.available_seats}
-                        </span>
+                    {/* Seat Availability Card */}
+                    <div className="seat-availability-card card mb-4 shadow-sm">
+                      <div className="card-body">
+                        <h5 className="card-title fs-4 fw-bold text-center">Seats Available</h5>
+                        <div className='d-flex justify-content-around'>
+                          {tourData.seat.map((seat, index) => (
+                            <div key={index} className="seat-row d-flex justify-content-between align-items-center mb-2 p-3 border-bottom">
+                              <div className='d-flex flex-column'>
+                              <div className="seat-date fs-6">
+                                <span className="fw-bold">Date: </span>
+                                {seat.Date}
+                              </div>
+                              <div className="seat-available fs-6">
+                                <span className="fw-bold">Available Seats: </span>
+                                {seat.available_seats}
+                              </div>
+                              <div>
+                                <button onClick={()=>{setDate(seat.Date)}}>Select </button>
+                              </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
 
-                
-                <div className=''>
-                  {userToken ? (
-                        <button className='btn btn-success btn-lg btn_color' onClick={handleBookNowClick}>Book Now</button>
+                  {/* Book Now Button */}
+                  <div className="book-now-section mt-3 d-flex justify-content-around">
+                    {userToken ? (
+                      <button className="btn btn-success btn-lg btn_color" onClick={handleBookNowClick}>
+                        Book Now
+                      </button>
                     ) : (
                       <button
-                        className='btn btn-success btn-lg btn_color'
-                        onClick={() => {alert('Please log in to book.'); 
-                        navigate('/login')}}
-                        
+                        className="btn btn-success btn-lg btn_color"
+                        onClick={() => {
+                          alert('Please log in to book.');
+                          navigate('/login');
+                        }}
                       >
                         Book Now
                       </button>
-                      )}
+                    )}
                   </div>
-                  </div>
+                </div>
+
                 <div className="p-2 mt-5 mb-5">
-                <div className='fs-5 text_title fw-bold'>Description</div>
-                <div className='mt-2 text_decpt'>{tourData.desc}</div></div>
-                
+                  <div className='fs-5 text_title fw-bold'>Description</div>
+                  <div className='mt-2 text_decpt'>{tourData.desc}</div>
+                </div>
+              </div>
             </div>
         </>
   )

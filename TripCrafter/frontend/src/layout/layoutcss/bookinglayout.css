@@ -62,3 +62,49 @@
     }
   }
   
+  .seat-availability-card {
+    border-radius: 10px;
+    background-color: #f8f9fa; /* Light grey background */
+    border: none;
+  }
+  
+  .card-title {
+    color: #343a40; /* Dark grey color for title */
+    margin-bottom: 1.5rem;
+  }
+  
+  .seat-row {
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .seat-row:hover {
+    background-color: #f1f3f5; /* Slight hover effect */
+  }
+  
+  .seat-date, .seat-available {
+    color: #495057; /* Text color for seat info */
+  }
+  
+  .seat-available span {
+    color: #007bff; /* Highlight seat availability number */
+  }
+  
+  .border-bottom {
+    border-color: #dee2e6; /* Light border */
+  }
+  
+  .card-body {
+    padding: 1.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .seat-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .seat-date, .seat-available {
+      margin-bottom: 0.5rem;
+    }
+  }
+  

@@ -2,6 +2,7 @@ import React from 'react';
 import T0 from '../images/tour04.jpg';
 import T1 from '../images/tour05.jpg';
 import T2 from '../images/tour06.jpg';
+
 import './pagescss/home.css';
 import Gallary from '../components/Gallary';
 import Card from '../components/Card';
@@ -166,7 +167,7 @@ const Home = () => {
         </div>
       </div>
     </div>
-    
+
     </>
   );
 };
