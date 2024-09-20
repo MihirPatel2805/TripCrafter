@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// import './Compcss/card.css'
 import axios from 'axios';
 import CardSec from './CardSec'; // Import Cardsec component
 
