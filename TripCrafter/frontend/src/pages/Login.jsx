@@ -50,8 +50,6 @@ const Login = () => {
 
   return (
     <div>
-      
-      
       <div>
       <section className="vh-100 bg-image bgimg" >
       
