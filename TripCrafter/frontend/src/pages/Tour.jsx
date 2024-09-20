@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import CardSec from '../components/CardSec';
 import UseFetch from '../components/UseFetch';
