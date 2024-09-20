@@ -14,8 +14,7 @@ class Tour(models.Model):
     photo = models.ImageField(upload_to='tours/')  # Adjust the 'upload_to' path as needed
     desc = models.TextField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    max_group_size = models.PositiveIntegerField()
-
+    seat =models.JSONField(default=list)
     featured = models.BooleanField(default=False)
 
     created_at = models.DateTimeField(auto_now_add=True)

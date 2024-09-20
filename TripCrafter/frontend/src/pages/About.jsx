@@ -10,14 +10,13 @@ const About = () => {
                 <div className="row d-flex justify-content-center   text-white align-items-center ">
                 <div className="col-lg-6  text-left  p-5">
                         <h2 className=" about_title text_title fw-bold">About Us</h2>
-                        
                     </div>
                     <div className="col-lg-6 ">
                         <div className="about-content border-primary">
                             <div className="about-details">
                             <h3 className=" text_title mt-5">Vision</h3>
                               <p className='text_decpt'>
-                                Keeping the core values and ethics at the center, EXPLORE - the NGO aims to be a benchmark in training the youth for a better future. The NGO is dedicated to enhancing positive qualities in modern youth, leading to a brighter society.
+                                Keeping the core values and ethics at the center, TRIP CRAFTER - the NGO aims to be a benchmark in training the youth for a better future. The NGO is dedicated to enhancing positive qualities in modern youth, leading to a brighter society.
                               </p>
                               <h3 className=" text_title mt-5">Mission</h3>
                               <p className='text_decpt'>

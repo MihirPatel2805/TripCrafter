@@ -88,12 +88,18 @@ def create_booking(request):
         num_of_people = int(data['num_of_people'])
         tour = Tour.objects.get(id=tour_id)
 
-        if tour.max_group_size >= num_of_people:
-            tour.max_group_size -= num_of_people
-            if tour.max_group_size < 0:
-                tour.max_group_size = 0  # Ensure it doesn't go below 0
-            tour.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        print(tour.seat)
+        print(data['booking_date'])
+        for date in tour.seat:
+            if date['Date']==data['booking_date'] :
+                if date['available_seats']>=num_of_people:
+                    date['available_seats'] -= num_of_people
+                    if date['available_seats'] < 0:
+                        date['available_seats'] = 0
+                    tour.save()
+                    break
+        print(tour.seat)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

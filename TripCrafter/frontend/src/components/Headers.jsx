@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import logo from '../assets/images/logo.png';
 import "./Compcss/Headers.css";
 import logo from "../images/ss1.png";
 
@@ -67,7 +66,7 @@ const Headers = () => {
       <nav className="navbar navbar-expand-lg navbar-dark nav_css sticky">
         <div className="container-fluid ">
           <a className="navbar-brand" href="/home">
-            <img src={logo} width="50%" alt="" />
+            <img src={logo} width="70px" height="70px" alt="" />
           </a>
           
           <div

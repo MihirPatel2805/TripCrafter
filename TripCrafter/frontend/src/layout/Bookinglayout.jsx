@@ -163,17 +163,29 @@ const Bookinglayout = () => {
                  
                   </div>
                 </div>
-                <div className="d-flex align-items-start justify-content-between mt-3 text_decpt ">
-                  <div className='fs-5 fw-bold text_decpt fs-4'>
+
+                <div className="d-flex align-items-start justify-content-between mt-3 text_decpt">
+                  <div className="fs-5 fw-bold text_decpt fs-4">
                     &#8377;{tourData.price}
-                  <span className='fw-normal text_decpt text-muted'>/person</span>
+                    <span className="fw-normal text_decpt text-muted">/person</span>
                   </div>
-                  <div className='fs-5 fw-bold text_decpt fs-4'>
-                    seats available:
-                     {tourData.max_group_size}
+                  <div className="fs-5 fw-bold text_decpt fs-4">
+                    Seats available:
+                    {tourData.seat.map((id, index) => (
+                      <div key={index}> {/* Make sure the key is in the outer element */}
+                        <span className="ms-2">
+                          {id.Date}
+                        </span> : 
+                        <span className="ms-2">
+                          {id.available_seats}
+                        </span>
+                      </div>
+                    ))}
                   </div>
-                  
-                  <div className=''>
+                </div>
+
+                
+                <div className=''>
                   {userToken ? (
                         <button className='btn btn-success btn-lg btn_color' onClick={handleBookNowClick}>Book Now</button>
                     ) : (
@@ -193,8 +205,7 @@ const Bookinglayout = () => {
                 <div className='mt-2 text_decpt'>{tourData.desc}</div></div>
                 
             </div>
-        </div>
-    </>
+        </>
   )
 }
 

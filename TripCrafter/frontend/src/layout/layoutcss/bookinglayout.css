@@ -1,4 +1,4 @@
-.text_title{
+/* .text_title{
     font-family: var(--font-name);
   }
   .text_decpt{
@@ -13,5 +13,52 @@
   }
   .btn_color{
     background-color: #05668d;
-  }
+  } */
  
+  .text_decpt {
+    font-family: 'Arial', sans-serif;
+    color: #333; /* A soft dark color */
+  }
+  
+  .fs-4 {
+    font-size: 1.5rem; /* Adjusting for responsive size */
+  }
+  
+  .fw-bold {
+    font-weight: bold;
+  }
+  
+  .fw-normal {
+    font-weight: normal;
+  }
+  
+  .mt-3 {
+    margin-top: 1rem;
+  }
+  
+  .d-flex {
+    display: flex;
+  }
+  
+  .align-items-start {
+    align-items: flex-start; /* Align content to the start vertically */
+  }
+  
+  .justify-content-between {
+    justify-content: space-between; /* Spread out the items horizontally */
+  }
+  
+  .ms-2 {
+    margin-left: 0.5rem;
+  }
+  
+  /* Additional classes for responsive styling */
+  @media (max-width: 768px) {
+    .d-flex {
+      flex-direction: column; /* Stack items on smaller screens */
+    }
+    .fs-4 {
+      font-size: 1.25rem;
+    }
+  }
+  
