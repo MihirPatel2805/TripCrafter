@@ -10,32 +10,32 @@ import ReviewCard from '../components/ReviewCard'
 
 const reviews = [
   {
-    name: 'John Doe',
-    profileImg: 'https://randomuser.me/api/portraits/men/1.jpg',
+    name: 'Krish Patel',
+    profileImg: 'https://images.pexels.com/photos/938639/pexels-photo-938639.jpeg?cs=srgb&dl=pexels-ravi-k-301762-938639.jpg&fm=jpg',
     rating: 5,
     reviewText: 'Booking through this website was super easy! Got great deals and had an amazing experience.',
   },
   {
-    name: 'Jane Smith',
-    profileImg: 'https://randomuser.me/api/portraits/women/1.jpg',
+    name: 'Viral Joshi',
+    profileImg: 'https://as1.ftcdn.net/v2/jpg/02/79/90/20/1000_F_279902034_kBjKUJvC8y19AdkEJ3L3emqxVqY5K7Cv.jpg',
     rating: 4,
     reviewText: 'Overall a good experience, though the filtering options could be improved. The service was excellent!',
   },
   {
-    name: 'Mike Johnson',
-    profileImg: 'https://randomuser.me/api/portraits/men/2.jpg',
+    name: 'Pratham Makvana',
+    profileImg: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh7mfz0ZWyJ1mc5_ObMbLHliYBsUDmEYRmXA&s',
     rating: 3,
     reviewText: 'The booking process was fine, but I had issues with my confirmation email. Customer support helped resolve it.',
   },
   {
-    name: 'Emily Clark',
-    profileImg: 'https://randomuser.me/api/portraits/women/2.jpg',
+    name: 'Subham Kotadiya',
+    profileImg: 'https://plus.unsplash.com/premium_photo-1682092603230-1ce7cf8ca451?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwbWFufGVufDB8fDB8fHww',
     rating: 5,
     reviewText: 'Loved the platform! Quick and easy. I will definitely use this site again for my next trip!',
   },
   {
-    name: 'David Wilson',
-    profileImg: 'https://randomuser.me/api/portraits/men/3.jpg',
+    name: 'Meet Panchal',
+    profileImg: 'https://st4.depositphotos.com/10313122/22093/i/450/depositphotos_220936114-stock-photo-young-handsome-indian-man-against.jpg',
     rating: 4,
     reviewText: 'The prices were competitive, and I appreciated the fast booking confirmation. Smooth process overall.',
   }
