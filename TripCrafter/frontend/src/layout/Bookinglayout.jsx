@@ -8,7 +8,7 @@ const Bookinglayout = () => {
 
     const { id } = useParams(); // Get the `id` parameter from the URL
     const [tourData, setTourData] = useState(null);
-    const [date, setDate] = useState('')
+    // const [date, setDate] = useState('')
 
    const  userToken=localStorage.getItem('userToken');
   
@@ -30,19 +30,13 @@ const Bookinglayout = () => {
     }
     
     const handleBookNowClick = () => {
-      if (date === ''){
-        alert('Please Select Date!')
-      } else {
         tourData.seat.map((seat, index) => {
-          if (seat.Date === date){
-            if (seat.available_seats === 0) {
-              alert('No Seats Available.')
-            } else {
-              navigate(`/Booking/${tourData.id}`);
-            } 
-          }
+          if (seat.available_seats === 0) {
+            alert('No Seats Available.')
+          } else {
+            navigate(`/Booking/${tourData.id}`);
+          } 
         })
-      }
     };
 
   return (
@@ -185,9 +179,9 @@ const Bookinglayout = () => {
                                 <span className="fw-bold">Available Seats: </span>
                                 {seat.available_seats}
                               </div>
-                              <div>
+                              {/* <div>
                                 <button onClick={()=>{setDate(seat.Date)}}>Select </button>
-                              </div>
+                              </div> */}
                               </div>
                             </div>
                           ))}
