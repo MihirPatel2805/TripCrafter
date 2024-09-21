@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import CardSec from './CardSec'; // Import Cardsec component
+import CardSec from './CardSec'; 
 
 const Card = () => {
    const url = "http://127.0.0.1:8000/api/tours/";
  
 
  const useFetch=(url)=>{
-    const [data, setData] = useState([]); // State to store tour data
+    const [data, setData] = useState([]);
    
    useEffect(() => {
       const fetchData = async () => {

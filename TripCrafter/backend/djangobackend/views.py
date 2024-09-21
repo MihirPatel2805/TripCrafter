@@ -40,7 +40,6 @@ class UserLoginView(generics.CreateAPIView):
 #------------user info view which returns user data 
 class UserInfoView(generics.RetrieveAPIView):
     serializer_class = UserInfoSerializer
-    permission_classes = [permissions.IsAuthenticated]
 
     def get_object(self):
         return self.request.user

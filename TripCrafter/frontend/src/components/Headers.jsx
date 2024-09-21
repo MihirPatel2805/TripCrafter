@@ -9,15 +9,10 @@ const Headers = () => {
     // Function to fetch user information from your Django backend
     const fetchUserInfo = async () => {
       try {
-        // Include the user token in the request headers for authentication
-        const token = localStorage.getItem("userToken"); // Replace with your token storage method
         const response = await fetch(
           "http://127.0.0.1:8000/api/api/get-user-info/",
           {
             method: "GET",
-            headers: {
-              Authorization: `Token ${token}`,
-            },
           }
         );
         if (response.ok) {
