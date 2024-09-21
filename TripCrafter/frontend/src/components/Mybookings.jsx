@@ -63,7 +63,7 @@ const Mybookings = () => {
             <tr className="card-text "> <td className='p-1 fw-bold text_style'>Total Price:</td> {booking.price*booking.num_of_people}</tr>
             <tr className="card-text">
                     <td className='p-1 fw-bold text_style'>Booking Status:</td>
-                    <td className={`p-1 text_style ${booking.status === 'Completed' ? 'text-success' : 'text-danger'}`}> {booking.status} </td>
+                    <td className={`p-1 text_style ${booking.status === 'Completed' ? 'text-success' : 'text-danger'}`}> Success </td>
             </tr>
           </div>
           <div className='m-2'>

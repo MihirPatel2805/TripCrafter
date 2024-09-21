@@ -53,7 +53,7 @@ const Home = () => {
                   Traveling opens the door to creating{' '}
                   <span className="highlight">memories</span>
                 </h1>
-                <p>
+                <p style={{color: 'whitesmoke'}}>
                   Explore a diverse range of travel options and easily book your dream destinations right here. Our user-friendly platform ensures seamless booking experiences, allowing you to focus on creating cherished memories. Start your adventure today!
                 </p>
                 <button className="btn btn-primary explore-btn">Explore Now</button>

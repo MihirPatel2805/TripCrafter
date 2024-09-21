@@ -9,11 +9,6 @@ const Footer = () => {
 
   };
 
-
-  const contactInfoStyle = {
-    marginTop: '2%',
-  };
-
   const mapFrameStyle = {
     border: '0',
   };
@@ -30,7 +25,7 @@ const Footer = () => {
         <div className=''><img  src={logo} style={imageStyle} alt="Logo" /></div>
 
         <div className='text-white' style={{  maxWidth:'330px'}}>
-        <span className="text-center text_decpt">Explore is a Non Government Organization, being run by young students for social reformation and building the nation with moral values and ethics.
+        <span className="text-center text_decpt" style={{color: 'whitesmoke'}}>Explore is a Non Government Organization, being run by young students for social reformation and building the nation with moral values and ethics.
         </span>
         </div> 
 
@@ -72,13 +67,13 @@ const Footer = () => {
     <div className="col-lg-3 col-sm-6">
       <div className="p-2  text-white d-flex flex-column  border_top">
         <h2 className='text_title'>Contact Us</h2>
-            <div style={contactInfoStyle} className='text_decpt'>
+            <div className='text_decpt' style={{color: 'whitesmoke'}}>
               <span>LJ Campus, LJ College Rd, near Sanand - Sarkhej Road, Makarba, Sarkhej-Okaf, Gujarat 382210</span>
             </div>
             <br />
-            <span className='text_decpt'>Office Timings: 11AM to 8PM</span>
+            <span className='text_decpt' style={{color: 'whitesmoke'}}>Office Timings: 11AM to 8PM</span>
             <br />
-            <p className='text_decpt'>
+            <p className='text_decpt' style={{color: 'whitesmoke'}}>
               <i className="fa fa-fw fa-phone"></i>  091-9123456789
             </p></div>
     </div>

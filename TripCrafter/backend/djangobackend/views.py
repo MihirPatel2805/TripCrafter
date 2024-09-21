@@ -116,12 +116,21 @@ class BookingList(generics.ListCreateAPIView):
 @api_view(['DELETE'])
 @permission_classes([IsAuthenticated])
 def delete_booking(request, id):
+    print(request.data)
+    print(id)
     try:
         booking = Booking.objects.get(id=id)
+        print(booking)
         tour = booking.tour
-
+        print(tour)
+        # print(request.data)
+        
         # Restore the seats
-        tour.max_group_size += booking.num_of_people
+        # tour.seat += booking.num_of_people
+        for i in tour.seat:
+            print(i)
+            if booking.booking_date == i['Date']:
+                i['available_seats']+=booking.num_of_people
         tour.save()
 
         # Delete the booking
